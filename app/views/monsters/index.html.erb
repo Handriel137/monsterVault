@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Monsters</h1>
+
+  <table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Subtype</th>
+      <th>AC</th>
+      <th>HP</th>
+      <th>Hit Dice</th>
+      <th>Challenge Rating</th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @monsters.each do |monster| %>
+      <tr>
+        <td><%= monster.name %></td>
+        <td><%= monster.subtype %></td>
+        <td><%= monster.armor_class %></td>
+        <td><%= monster.hit_points %></td>
+        <td><%= monster.hit_dice %></td>
+        <td><%= monster.challenge_rating %></td>
+        <td><%= link_to 'Show', monster %></td>
+        <td><%= link_to 'Edit', edit_monster_path(monster) %></td>
+        <td><%= link_to 'Destroy', monster, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Monster', new_monster_path %>
