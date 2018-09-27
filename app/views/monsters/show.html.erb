@@ -1,4 +1,40 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Name:</strong>
+  <%= @monster.name %>
+</p>
+
+<p>
+  <strong>Race:</strong>
+  <%= @monster.race %>
+</p>
+
+<p>
+  <strong>Subtype:</strong>
+  <%= @monster.subtype %>
+</p>
+
+<p>
+  <strong>Armor Class:</strong>
+  <%= @monster.armor_class %>
+</p>
+
+<p>
+  <strong>Hit Points:</strong>
+  <%= @monster.hit_points %>
+</p>
+
+<p>
+  <strong>Hit Dice:</strong>
+  <%= @monster.hit_dice %>
+</p>
+
+<p>
+  <strong>challenge_rating:</strong>
+  <%= @monster.challenge_rating %>
+</p>
+
+
 <%= link_to 'Edit', edit_monster_path(@monster) %> |
 <%= link_to 'Back', monsters_path %>
