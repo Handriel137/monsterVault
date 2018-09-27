@@ -5,6 +5,7 @@
   <table>
   <thead>
     <tr>
+      <th>Id</th>
       <th>Name</th>
       <th>Subtype</th>
       <th>AC</th>
@@ -18,6 +19,7 @@
   <tbody>
     <% @monsters.each do |monster| %>
       <tr>
+        <td><%= monster.id %></td>
         <td><%= monster.name %></td>
         <td><%= monster.subtype %></td>
         <td><%= monster.armor_class %></td>

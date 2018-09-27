@@ -12,14 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2018_09_26_014639) do
 
-  create_table "authors", force: :cascade do |t|
-    t.text "name"
-    t.text "books"
-    t.integer "age"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "monsters", force: :cascade do |t|
     t.string "name", null: false
     t.string "size"
