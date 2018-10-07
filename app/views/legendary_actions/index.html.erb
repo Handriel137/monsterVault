@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Legendary Actions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Attack bonus</th>
+      <th>Damage dice</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @legendary_actions.each do |legendary_action| %>
+      <tr>
+        <td><%= legendary_action.name %></td>
+        <td><%= legendary_action.description %></td>
+        <td><%= legendary_action.attack_bonus %></td>
+        <td><%= legendary_action.damage_dice %></td>
+        <td><%= link_to 'Show', legendary_action %></td>
+        <td><%= link_to 'Edit', edit_legendary_action_path(legendary_action) %></td>
+        <td><%= link_to 'Destroy', legendary_action, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Legendary Action', new_legendary_action_path %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @legendary_action.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @legendary_action.description %>
+</p>
+
+<p>
+  <strong>Attack bonus:</strong>
+  <%= @legendary_action.attack_bonus %>
+</p>
+
+<p>
+  <strong>Damage dice:</strong>
+  <%= @legendary_action.damage_dice %>
+</p>
+
+<%= link_to 'Edit', edit_legendary_action_path(@legendary_action) %> |
+<%= link_to 'Back', legendary_actions_path %>

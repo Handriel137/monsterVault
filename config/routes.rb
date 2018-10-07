@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :reactions
+  resources :legendary_actions
+  resources :actions
   resources :special_abilities
   resources :monsters
 

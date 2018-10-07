@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @reaction.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @reaction.description %>
+</p>
+
+<p>
+  <strong>Attack bonus:</strong>
+  <%= @reaction.attack_bonus %>
+</p>
+
+<%= link_to 'Edit', edit_reaction_path(@reaction) %> |
+<%= link_to 'Back', reactions_path %>
