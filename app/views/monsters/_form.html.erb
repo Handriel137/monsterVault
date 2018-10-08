@@ -11,33 +11,15 @@
     </div>
   <% end %>
 
-  <div class="field">
-  <%= form.label :name %>
-  <%= form.text_area :name %>
-  </div>
-  
-  <div class="field">
-  <%= form.label :subtype %>
-  <%= form.text_area :subtype %>
-  </div>
-  <div class="field">
-  <%= form.label :armor_class %>
-  <%= form.text_area :armor_class %>
-  </div>
-  <div class="field">
-  <%= form.label :hit_points %>
-  <%= form.text_area :hit_points %>
-  </div>
-  <div class="field">
-  <%= form.label :challenge_rating %>
-  <%= form.text_area :challenge_rating %>
-  </div>
-  <div class="field">
-  <%= form.label :hit_dice %>
-  <%= form.text_area :hit_dice %>
-  </div>
+  <% monster.attributes.each do |key, value| %>
+  <tr>
+    <% if value == monster.id -%>
+     <% %>
+    <% else %>
+      <td><%= form.label key %></td>
+      <td><%= form.text_area value %></td>
+    <%end%>
+  </tr>
+  <%end%> 
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
