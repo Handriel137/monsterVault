@@ -36,5 +36,40 @@
 </p>
 
 
+___<br>
+>## <%= @monster.name %><br>
+>*<%= @monster.race%>, <%= @monster.alignment%>*<br>
+> ___<br>
+> - **Armor Class** <%= @monster.armor_class%><br>
+> - **Hit Points** <%= @monster.hit_points%> (<%= @monster.hit_dice%>)<br>
+> - **Speed** <%= @monster.speed%><br>
+>___<br>
+>|STR|DEX|CON|INT|WIS|CHA|<br>
+>|:---:|:---:|:---:|:---:|:---:|:---:|<br>
+>|<%= @monster.strength.to_i%> (<%=@monster.strength%>)
+|18 (+4)
+|20 (+5)
+|7 (-2)
+|7 (-2)
+|6 (-2)|<br>
+>___<br>
+> - **Damage Vulnerabilities** <%= @monster.damage_vulnerabilities%><br>
+> - **Damage Resistances** <%= @monster.damage_resistances%><br>
+> - **Damage Immunities** <%= @monster.damage_immunities%><br>
+> - **Condition Immunities** <%= @monster.condition_immunities%><br>
+> - **Senses** <%= @monster.senses %> <br>
+> - **Languages** <%= @monster.languages %> <br>
+> - **Challenge Rating** <%= @monster.challenge_rating %> <br>
+> ___<br>
+<% @monster.special_ability.ids.each do |x|%><br>
+> ***<%= @monster.special_ability.find(x).name%>***<br>
+<%= @monster.special_ability.find(x).description%><br>
+<%end%>
+><br>
+> ### Actions<br>
+
+> ### Reactions<br>
+<hr>
+
 <%= link_to 'Edit', edit_monster_path(@monster) %> |
 <%= link_to 'Back', monsters_path %>
