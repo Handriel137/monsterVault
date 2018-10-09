@@ -1,39 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @monster.name %>
-</p>
 
-<p>
-  <strong>Race:</strong>
-  <%= @monster.race %>
-</p>
-
-<p>
-  <strong>Subtype:</strong>
-  <%= @monster.subtype %>
-</p>
-
-<p>
-  <strong>Armor Class:</strong>
-  <%= @monster.armor_class %>
-</p>
-
-<p>
-  <strong>Hit Points:</strong>
-  <%= @monster.hit_points %>
-</p>
-
-<p>
-  <strong>Hit Dice:</strong>
-  <%= @monster.hit_dice %>
-</p>
-
-<p>
-  <strong>challenge_rating:</strong>
-  <%= @monster.challenge_rating %>
-</p>
+<% @monster.attributes.each do |key, value| %>
+  <tr>
+    <% if value == @monster.id -%>
+     <% %>
+    <% else %>
+      <p><strong><%=key%></strong></td>
+      <p><%=value%></td>
+    <%end%>
+  </tr>
+<%end%>
 
 
 ___<br>
@@ -47,11 +24,12 @@ ___<br>
 >|STR|DEX|CON|INT|WIS|CHA|<br>
 >|:---:|:---:|:---:|:---:|:---:|:---:|<br>
 >|<%= @monster.strength.to_i%> (<%=@monster.strength%>)
-|18 (+4)
-|20 (+5)
-|7 (-2)
-|7 (-2)
-|6 (-2)|<br>
+|<%= @monster.dexterity.to_i%> (<%= @monster.dexterity%>)
+|<%= @monster.constitution.to_i%> (<%= @monster.constitution%>)
+|<%= @monster.intelligence.to_i%> (<%= @monster.intelligence%>)
+|<%= @monster.wisdom.to_i%> (<%= @monster.wisdom%>)
+|<%= @monster.charisma.to_i%> (<%= @monster.charisma%>)
+|<br>
 >___<br>
 > - **Damage Vulnerabilities** <%= @monster.damage_vulnerabilities%><br>
 > - **Damage Resistances** <%= @monster.damage_resistances%><br>

@@ -2,7 +2,7 @@
 
 <h1>Monsters</h1>
 
-  <table>
+  <table border="2">
   <thead>
     <tr>
       <th>Id</th>
@@ -36,9 +36,9 @@
     <% end %>
   </tbody>
 </table>
-
+<hr>
 <h1>Random Monster</h1>
   <td><%= Monster.all.sample.name %></td>
 <br>
-
+<hr>
 <%= link_to 'New Monster', new_monster_path %>

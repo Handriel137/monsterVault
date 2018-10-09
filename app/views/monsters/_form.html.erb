@@ -12,14 +12,17 @@
   <% end %>
 
   <% monster.attributes.each do |key, value| %>
-  <tr>
-    <% if value == monster.id -%>
-     <% %>
-    <% else %>
-      <td><%= form.label key %></td>
-      <td><%= form.text_area value %></td>
-    <%end%>
-  </tr>
-  <%end%> 
+    <tr>
+      <% if value == monster.id -%>
+      <% %>
+      <% else %>
+        <td><%= form.label key %></td>
+        <td><%= form.text_area key, :value => value%> </td>
+      <%end%>
+    </tr>
+  <%end%>
 
+  <div class="actions">
+    <%= form.submit %>
+  </div>
 <% end %>
