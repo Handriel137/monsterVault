@@ -45,8 +45,19 @@ ___<br>
 <%end%>
 ><br>
 > ### Actions<br>
-
+> ___<br>
+<% @monster.attacks.ids.each do |x|%><br>
+> ***<%= @monster.attacks.find(x).name%>***<br>
+<%= @monster.attacks.find(x).description%><br>
+<%end%>
+><br>
 > ### Reactions<br>
+> ___<br>
+<% @monster.reactions.ids.each do |x|%><br>
+> ***<%= @monster.reactions.find(x).name%>***<br>
+<%= @monster.reactions.find(x).description%><br>
+<%end%>
+><br>
 <hr>
 
 <%= link_to 'Edit', edit_monster_path(@monster) %> |

@@ -20,6 +20,14 @@ SpecialAbility.create(name: 'Wing Buffet', description: 'Its not all you can eat
 
 puts "created a Dragon..."
 monster = Monster.find_by(name: "Adult Red Dragon")
+monster2 = Monster.find_by(name: "Aboleth")
+
+puts "giving the dragon Fire Breath"
+monster.special_ability << SpecialAbility.find_by(id:1)
+monster.special_ability << SpecialAbility.find_by(id:4)
+
+puts "giving the Aboleth 'Telapathy' "
+monster2.special_ability << SpecialAbility.find_by(id:3)
 
 puts "creating Attacks..."
 Attack.create(name: 'swpie', description: 'swipe attack', damage_dice: '1d10', damage_bonus: 5)
