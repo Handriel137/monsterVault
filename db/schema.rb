@@ -10,24 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_10_000552) do
-
-  create_table "actions", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.string "damage_dice"
-    t.integer "damage_bonus"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 2018_10_10_003430) do
 
   create_table "attacks", force: :cascade do |t|
     t.string "name"
     t.string "description"
     t.string "damage_dice"
     t.integer "damage_bonus"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  end
+
+  create_table "attacks_monsters", id: false, force: :cascade do |t|
+    t.integer "monster_id", null: false
+    t.integer "attack_id", null: false
   end
 
   create_table "legendary_actions", force: :cascade do |t|
@@ -35,8 +29,6 @@ ActiveRecord::Schema.define(version: 2018_10_10_000552) do
     t.string "description"
     t.integer "attack_bonus"
     t.string "damage_dice"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "monsters", force: :cascade do |t|
@@ -87,18 +79,18 @@ ActiveRecord::Schema.define(version: 2018_10_10_000552) do
   end
 
   create_table "monsters_special_abilities", id: false, force: :cascade do |t|
-    t.integer "monster_id"
-    t.integer "special_ability_id"
-    t.index ["monster_id"], name: "index_monsters_special_abilities_on_monster_id"
-    t.index ["special_ability_id"], name: "index_monsters_special_abilities_on_special_ability_id"
+    t.integer "monster_id", null: false
+    t.integer "special_ability_id", null: false
+    t.integer "monsters_id"
+    t.integer "special_abilities_id"
+    t.index ["monsters_id"], name: "index_monsters_special_abilities_on_monsters_id"
+    t.index ["special_abilities_id"], name: "index_monsters_special_abilities_on_special_abilities_id"
   end
 
   create_table "reactions", force: :cascade do |t|
     t.string "name"
     t.string "description"
     t.integer "attack_bonus"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "special_abilities", force: :cascade do |t|

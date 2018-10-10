@@ -18,6 +18,12 @@ SpecialAbility.create(name: 'Scuttle', description: 'The goblin moves 5ft after 
 SpecialAbility.create(name: 'Telepathy', description: 'The Aboleth can speak without words within 30ft.', attack_bonus: '0', damage_dice: '0')
 SpecialAbility.create(name: 'Wing Buffet', description: 'Its not all you can eat.', attack_bonus: '10', damage_dice: '0')
 
+puts "created a Dragon..."
 monster = Monster.find_by(name: "Adult Red Dragon")
-monster.special_ability << SpecialAbility.find_by(id:1)
-monster.special_ability << SpecialAbility.find_by(id:4)
+
+puts "creating Attacks..."
+Attack.create(name: 'swpie', description: 'swipe attack', damage_dice: '1d10', damage_bonus: 5)
+
+monster.attacks << Attack.find_by(id:1)
+puts "Dragon can now Swpie"
+
