@@ -32,3 +32,9 @@ LegendaryAction.create(name: "Draconic Presence", description: "The dragon bello
 
 monster.legendary_actions << LegendaryAction.find_by(id:1)
 puts "legendary action associated"
+
+puts "created reactions"
+Reaction.create(name: "Bandit Captain Parry", description: "The Bandit Captain Parries", attack_bonus: 8)
+
+monster.reactions << Reaction.find_by(id:1)
+puts "Dragons can now parry"

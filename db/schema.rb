@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_10_010617) do
+ActiveRecord::Schema.define(version: 2018_10_10_011555) do
 
   create_table "attacks", force: :cascade do |t|
     t.string "name"
@@ -85,6 +85,15 @@ ActiveRecord::Schema.define(version: 2018_10_10_010617) do
     t.string "investigation"
     t.string "intimidation"
     t.string "performance"
+  end
+
+  create_table "monsters_reactions", id: false, force: :cascade do |t|
+    t.integer "monster_id", null: false
+    t.integer "reaction_id", null: false
+    t.integer "monsters_id"
+    t.integer "reactions_id"
+    t.index ["monsters_id"], name: "index_monsters_reactions_on_monsters_id"
+    t.index ["reactions_id"], name: "index_monsters_reactions_on_reactions_id"
   end
 
   create_table "monsters_special_abilities", id: false, force: :cascade do |t|
