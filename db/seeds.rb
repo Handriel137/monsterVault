@@ -27,3 +27,8 @@ Attack.create(name: 'swpie', description: 'swipe attack', damage_dice: '1d10', d
 monster.attacks << Attack.find_by(id:1)
 puts "Dragon can now Swpie"
 
+puts "created legendary action"
+LegendaryAction.create(name: "Draconic Presence", description: "The dragon bellows a roar frightening all within 30ft", attack_bonus: 16, damage_dice: "none")
+
+monster.legendary_actions << LegendaryAction.find_by(id:1)
+puts "legendary action associated"

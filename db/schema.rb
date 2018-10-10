@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_10_003430) do
+ActiveRecord::Schema.define(version: 2018_10_10_010617) do
 
   create_table "attacks", force: :cascade do |t|
     t.string "name"
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(version: 2018_10_10_003430) do
     t.string "description"
     t.integer "attack_bonus"
     t.string "damage_dice"
+  end
+
+  create_table "legendary_actions_monsters", id: false, force: :cascade do |t|
+    t.integer "monster_id", null: false
+    t.integer "legendary_action_id", null: false
+    t.integer "monsters_id"
+    t.integer "legendary_actions_id"
+    t.index ["legendary_actions_id"], name: "index_legendary_actions_monsters_on_legendary_actions_id"
+    t.index ["monsters_id"], name: "index_legendary_actions_monsters_on_monsters_id"
   end
 
   create_table "monsters", force: :cascade do |t|
