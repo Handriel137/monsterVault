@@ -5,7 +5,7 @@ class CreateReactions < ActiveRecord::Migration[5.2]
       t.string :description
       t.integer :attack_bonus
 
-      t.timestamps
+      
     end
   end
 end

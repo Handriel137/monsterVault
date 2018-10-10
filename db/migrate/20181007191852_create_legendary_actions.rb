@@ -6,7 +6,7 @@ class CreateLegendaryActions < ActiveRecord::Migration[5.2]
       t.integer :attack_bonus
       t.string :damage_dice
 
-      t.timestamps
+      
     end
   end
 end
